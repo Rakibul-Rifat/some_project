@@ -18,6 +18,107 @@
   </div>
   <div class="box" class="box2"></div>
 
+   -------
+   body {
+  
+  align-items: center;
+  background: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  padding: 0;
+  margin:0;
+}
+
+nav {
+  padding: 20px;
+  background: #333;
+  display :flex;
+ align-items:center;
+}
+
+nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+.nav a:first-of-type {
+  margin-left: auto;
+}
+
+
+/* this part is  for nav bar image animation */
+.nav img {
+  width:50px;
+  
+  opacity: 0;
+  /*  animation-fill-mode: forwards , element retain the style values from the last keyframe */
+  animation: rightFlow 1s ease forwards;
+}
+/* for slide image */
+@keyframes rightFlow {
+  0% {
+    transform: translate(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.nav > a {
+  opacity: 0;
+  /* forwards: element retain the style values from the last keyframe */
+  animation: topFlow 1s ease forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+/* for nav bar text animation */
+@keyframes topFlow {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* this part is  for nav text animation */
+
+div.slide-right {
+  width:100%;
+  overflow:hidden;
+}
+div.slide-right p {
+  animation: 3s slide-right;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.box{
+  background-color: #59bc94;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+----------
+
 
 <script src="index.js"></script>
 </body>
